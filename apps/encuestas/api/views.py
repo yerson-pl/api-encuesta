@@ -6,8 +6,10 @@ from ..models import Encuesta, Pregunta, OpcionPregunta, Resultado
 
 
 class UserCreate(generics.CreateAPIView):
-    serializer_class = UserSerializer
-    
+    authentication_classes = ()
+    permission_classes = ()
+    serializer_class = UserSerializerr
+
 
 class EncuestaList(generics.ListCreateAPIView):
     queryset = Encuesta.objects.all()
