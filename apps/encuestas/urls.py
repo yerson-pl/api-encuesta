@@ -2,7 +2,10 @@ from django.conf.urls import url
 from apps.encuestas.api import views 
  
  
-urlpatterns = [ 
+urlpatterns = [
+    url(r'^login/$',  
+        views.LoginView.as_view(),  
+        name="login"),
     url(r'^users/$',  
         views.UserCreate.as_view(),  
         name="user_create"),
