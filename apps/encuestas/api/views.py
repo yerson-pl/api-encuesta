@@ -1,9 +1,13 @@
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework import status
-from .serializers import EncuestaSerializer, PreguntaSerializer, OpcionPreguntaSerializer, ResultadoSerializer
+from .serializers import EncuestaSerializer, PreguntaSerializer, OpcionPreguntaSerializer, ResultadoSerializer, UserSerializer
 from ..models import Encuesta, Pregunta, OpcionPregunta, Resultado
 
+
+class UserCreate(generics.CreateAPIView):
+    serializer_class = UserSerializer
+    
 
 class EncuestaList(generics.ListCreateAPIView):
     queryset = Encuesta.objects.all()

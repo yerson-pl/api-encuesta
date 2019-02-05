@@ -3,6 +3,9 @@ from apps.encuestas.api import views
  
  
 urlpatterns = [ 
+    url(r'^users/$',  
+        views.UserCreate.as_view(),  
+        name="user_create"),
     url(r'^encuestas/$',  
         views.EncuestaList.as_view(),  
         name=views.EncuestaList.name), 
