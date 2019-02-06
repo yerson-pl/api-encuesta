@@ -39,14 +39,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # rest_framework apps
     'rest_framework',
+<<<<<<< HEAD
     'rest_framework.authtoken',
     # apps 
+=======
+    'corsheaders',
+
+>>>>>>> local
     'apps.encuestas',
 ]
+
+# Config of Corsheaders Middeware
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # adding
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -124,6 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 # Rest_framework configuration
 
 REST_FRAMEWORK = {
@@ -135,3 +145,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     )
 }
+=======
+
+CORS_ORIGIN_ALLOW_ALL = True  # False
+
+CORS_ORIGIN_WHITELIST = ('127.0.0.1:8080', 'localhost:8080')
+>>>>>>> local
